@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+	<meta charset="UTF-8">
+	<title>Registro scolastico#1</title>
+	
+	<style>
+	
+		table {
+		
+			width: 900px;
+		
+			text-align: center;
+		
+			margin-left: auto;
+			margin-right: auto;
+		
+			font-family: Courier;
+			font-size: 20px;
+			background-color: gray;
+			border: 2px solid #3c4142;
+			
+			border-collapse: separate; 
+			border-spacing: 0; 
+			border-radius: 10px;
+			overflow: hidden;
+		
+		}
+		
+		th {
+		
+			background-color: #34baeb;
+			color: white;
+			
+			border-bottom: 2px solid #004159;
+			border-right: 2px solid #004159;
+			border-top: 2px solid #86ddfc;
+			border-left: 2px solid #86ddfc;
+			
+			margin: 10px;
+			padding: 10px;
+		
+		}
+		
+		td {
+			
+			background-color: gray;
+			color: white;
+			
+			font-weight: 400;
+		
+			border-bottom: 2px solid black;
+			border-right: 2px solid black;
+			border-top: 2px solid lightgray;
+			border-left: 2px solid lightgray;
+			margin: 10px;
+			padding: 10px;
+		
+		}
+	
+	</style>
+	
+</head>
+
+<body>
+
+	<script>
+		
+		let voto;
+		let giudizio;
+		
+		let studenti = [];
+		let giudizi = [];
+		
+		let nome = prompt("Nome dello studente (scrivere fine per uscire dal inserimento): ");
+		
+		while (nome !== "fine") {
+			
+			voto = Number(prompt("Voto dello studente (inserire numeri da 1 a 10): "));
+			
+			if (nome !== "fine") {
+				
+				studenti.push(nome);
+				
+			}			
+			
+			switch (voto) {
+			
+				case 1:
+				case 2:
+				case 3:
+				case 4:
+				case 5:
+					giudizio = "Insufficiente";
+					break;
+					
+				case 6:
+					giudizio = "Sufficiente";
+					break;
+					
+				case 7:
+					giudizio = "Discreto";
+					break;
+				
+				case 8:
+					giudizio = "Buono";
+					break;
+					
+				case 9:
+					giudizio = "Ottimo";
+					break;
+					
+				case 10:
+					giudizio = "Eccellente";
+					break;
+					
+				default:
+					giudizio = "voto non inserito correttamente!";
+					break;
+					
+			}
+			
+			giudizi.push(giudizio);
+			nome = prompt("Nome dello studente (scrivere fine per uscire dal inserimento): ");
+			
+		}
+	
+	</script>
+	
+	<!-- Creazione Tabella -->
+	<table>
+		<script>
+			
+			document.write("<tr>");
+				
+			document.write("<th>"+"Nome"+"</th>");
+			document.write("<th>"+"Voto"+"</th>");
+				
+			document.write("</tr>");
+				
+			for (i=0; i<studenti.length; i++) {
+				
+				document.write("<tr>");
+					
+				document.write("<td>"+studenti[i]+"</td>");
+				document.write("<td>"+giudizi[i]+"</td>");
+					
+				document.write("</tr>");
+				
+			}
+				
+		</script>
+	</table>
+
+</body>
+
+</html>
